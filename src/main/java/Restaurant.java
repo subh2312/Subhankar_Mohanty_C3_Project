@@ -69,5 +69,14 @@ public class Restaurant {
         return closingTime;
     }
 
+    public double selectMenu(List<String> itemNames) {
+        double total = 0;
+        for(Item item : getMenu()){
+            if(itemNames.contains(item.getName())){
+                total+= item.getPrice();
+            }
+        }
 
+        return total;
+    }
 }
