@@ -33,10 +33,9 @@ class RestaurantTest {
     @Test
     public void is_restaurant_open_should_return_false_if_time_is_outside_opening_and_closing_time(){
         LocalTime openingTime = LocalTime.now().plusHours(2);
-        LocalTime closingTime = LocalTime.parse("22:00:00");
+        LocalTime closingTime = openingTime.plusHours(8);
         restaurant =new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
-        restaurant.addToMenu("Sweet corn soup",119);
-        restaurant.addToMenu("Vegetable lasagne", 269);
+
 
 
         assertEquals(restaurant.isRestaurantOpen(),false);

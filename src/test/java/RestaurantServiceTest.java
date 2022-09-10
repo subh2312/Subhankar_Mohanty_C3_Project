@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.*;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
@@ -64,4 +66,20 @@ class RestaurantServiceTest {
         assertEquals(initialNumberOfRestaurants + 1,service.getRestaurants().size());
     }
     //<<<<<<<<<<<<<<<<<<<<ADMIN: ADDING & REMOVING RESTAURANTS>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    //<<<<<<<<<<<<<<<<<<<<PART 3: Failing Test Case : Get Total Order Amount>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void order_total_should_be_equal_to_sum_of_all_item_price(){
+        restaurant.addToMenu("Hot and Sour Soup",129);
+        restaurant.addToMenu("Chicken lasagne", 369);
+        assertEquals(restaurant.selectMenu(List.of("Hot and Sour Soup","Chicken lasagne")),(129+369));
+
+    }
+
+
+    //<<<<<<<<<<<<<<<<<<<<PART 3: Failing Test Case : Get Total Order Amount>>>>>>>>>>>>>>>>>>>>>>
+
+    //<<<<<<<<<<<<<<<<<<<<PART 3: Solution : Get Total Order Amount>>>>>>>>>>>>>>>>>>>>>>
+
+    //<<<<<<<<<<<<<<<<<<<<PART 3: Solution : Get Total Order Amount>>>>>>>>>>>>>>>>>>>>>>
 }
